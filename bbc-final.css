@@ -12,442 +12,442 @@ OOTB = Out-of-the-box
 
 /* TABLE OF CONTENTS  
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-	/* WEB FONTS
-	/* LAYOUT & OVERALL PAGE
-	/* RIBBON & SUITE BAR
-	/* HEADER
-	/* NAVIGATION (TOP NAV BAR)
-	/* SEARCH
-	 /* NAVIGATION (QUICK LAUNCH)
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+/* WEB FONTS
+/* LAYOUT & OVERALL PAGE
+/* RIBBON & SUITE BAR
+/* HEADER
+/* NAVIGATION (TOP NAV BAR)
+/* SEARCH
+/* NAVIGATION (QUICK LAUNCH)
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 
 
 /* WEB FONTS
 SharePoint Online only:  Web fonts must be saved locally, for example in a folder within the Style Library. See @font-face code sample below.
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-	 /* Font Awesome is a free font. http://fontawesome.io/  */
-	 @import "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
+/* Font Awesome is a free font. http://fontawesome.io/  */
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
 
 
 
 /* LAYOUT  & OVERALL PAGE
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-	/* Hide unnecessary page elements */
-		.ms-siteicon-img,  /* Image set as SharePoint site logo in Settings */ 
-		#suiteBarLeft,  /*Suite Bar Left (SharePoint text and links) */
-		#ms-help,  /* Help icon  */ 
-		#fullscreenmodebox,  /* Focus on Content icon */
-		.right-wp-zone-col,  /* Content area - right column */
-		.ms-core-listMenu-horizontalBox .ms-listMenu-editLink,  /* Global navigation "Edit Links" when managed navigation is in use */
-		.ms-core-listMenu-verticalBox .ms-listMenu-editLink  /* Current navigation "Edit Links" when managed navigation is in use */ {
-			display: none;
-		}
+/* Hide unnecessary page elements */
+.ms-siteicon-img,  /* Image set as SharePoint site logo in Settings */ 
+#suiteBarLeft,  /*Suite Bar Left (SharePoint text and links) */
+#ms-help,  /* Help icon  */ 
+#fullscreenmodebox,  /* Focus on Content icon */
+.right-wp-zone-col,  /* Content area - right column */
+.ms-core-listMenu-horizontalBox .ms-listMenu-editLink,  /* Global navigation "Edit Links" when managed navigation is in use */
+.ms-core-listMenu-verticalBox .ms-listMenu-editLink  /* Current navigation "Edit Links" when managed navigation is in use */ {
+	display: none;
+}
 
-		#RibbonContainer-TabRowRight /* Share, Follow, Edit links */ {
-			display: none !important; /* !important needed to override SharePoint inline style */
-		}
+#RibbonContainer-TabRowRight /* Share, Follow, Edit links */ {
+	display: none !important; /* !important needed to override SharePoint inline style */
+}
 
-	/* Web page background */
-		body {
-			background: #000;
-		}
-		#s4-workspace {
-			background: #131517 url("http://2013.spe.io/sites/sptechcon/style library/sherlock-bkgd.jpg") no-repeat center -1px;
-		}
-		form[action$="Who.aspx"] #s4-workspace,
-		form[action$="who.aspx"] #s4-workspace {
-			background: #101010 url("http://2013.spe.io/sites/sptechcon/style library/drwho-bkgd.jpg") no-repeat center 42px;
-		}
+/* Web page background */
+body {
+	background: #000;
+}
+#s4-workspace {
+	background: #131517 url("http://classcdn.s3.amazonaws.com/images/sherlock-bkgd.jpg") no-repeat center -1px;
+}
+form[action$="Who.aspx"] #s4-workspace,
+form[action$="who.aspx"] #s4-workspace {
+	background: #101010 url("http://classcdn.s3.amazonaws.com/images/drwho-bkgd.jpg") no-repeat center 42px;
+}
 
-	/* Remove OOTB shading on s4-workspace */	
-		.ms-core-overlay {
-			background-color: transparent;
-		}
+/* Remove OOTB shading on s4-workspace */	
+.ms-core-overlay {
+	background-color: transparent;
+}
 
-	/* Page content area */
-		#contentBox {
-			margin: 15px auto 0; 
-			background: #131517;
-			width: 956px;  /* Fixed width value (976px) minus padding value */
-			padding: 10px;
-		}
-		form[action$="Who.aspx"] #contentBox,
-		form[action$="who.aspx"] #contentBox {
-			background: #18242B;
-			margin-top: 5px;
-			color: #fff;
-		}
-		.col-fluid-1,
-		.col-fluid-2 {
-			float: none;
-			margin-right: 0;
-		}
-
-
-
- /* RIBBON & SUITE BAR
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	/* Reduce height of area to minimum required */
-		#suiteBar {
-			height: auto;
-		}
-
-	/* Ribbon background and border */
-		.ms-cui-topBar2 {
-			background: #000;
-			border-bottom: 1px solid #666;
-		} 
-		.ms-cui-topBar2,
-		.ms-cui-topBar2.ms-browseTabContainer {
-			border-bottom: 1px solid #666;
-		} 
-		
-	/* Move Suite Bar Right (Sign In/Welcome/Site Actions/Help) back to right side after hiding Suite Bar Left */
-		#suiteBarRight {
-			position: absolute; 
-			right: 0;  
-			background: transparent;  
-			top: 0;
-			z-index: 2;
-		}
+/* Page content area */
+#contentBox {
+	margin: 15px auto 0; 
+	background: #131517;
+	width: 956px;  /* Fixed width value (976px) minus padding value */
+	padding: 10px;
+}
+form[action$="Who.aspx"] #contentBox,
+form[action$="who.aspx"] #contentBox {
+	background: #18242B;
+	margin-top: 5px;
+	color: #fff;
+}
+.col-fluid-1,
+.col-fluid-2 {
+	float: none;
+	margin-right: 0;
+}
 
 
 
- /* HEADER  
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+/* RIBBON & SUITE BAR
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-	/* Undo the crazy that SharePoint creates with table display set to DIVs*/
-		#s4-titlerow .ms-table,
-		#s4-titlerow .ms-tableRow,
-		#s4-titlerow .ms-tableCell {
-			display: block;
-		}
+/* Reduce height of area to minimum required */
+#suiteBar {
+	height: auto;
+}
 
-	/* Wrapper around site logo wrapper */
-		#titleAreaBox {
-			margin: 0; 
-		}
+/* Ribbon background and border */
+.ms-cui-topBar2 {
+	background: #000;
+	border-bottom: 1px solid #666;
+} 
+.ms-cui-topBar2,
+.ms-cui-topBar2.ms-browseTabContainer {
+	border-bottom: 1px solid #666;
+} 
 
-	/* Site logo wrapper */		
-		#siteIcon {
-			float: none;  
-			text-align: left;  
-			margin-top: 35px;
-			position: absolute;
-			left: 50%;
-			margin-left: -565px;
-		} 
-
- 	/* Add new logo image */
-		.ms-siteicon-a {
-			background: #df180e url('http://2013.spe.io/sites/sptechcon/style library/bbc_one.png') no-repeat right; 
-			width: 173px; 
-			max-width: 173px; 
-			height: 56px; 
-			max-height: 56px; 
-		}
-
-	/* Page title text */
-		#pageTitle {
-			position: absolute;
-			top: 50px;
-			left: 50%;
-			margin-left: -375px;
-			font-family: 'Gill Sans MT', Arial, sans-serif;
-			font-size: 52px;
-			color: #fff;
-			font-weight: normal;
-		}
-		form[action$="Who.aspx"] #pageTitle,
-		form[action$="who.aspx"] #pageTitle {
-			width: 100%;
-			background: url("http://2013.spe.io/sites/sptechcon/style library/drwho-hdr.png") no-repeat center;
-			height: 170px;
-			text-indent: -99999px;
-			top: 50px;
-			left: 50%;
-			margin-left: -50%;
-		}
+/* Move Suite Bar Right (Sign In/Welcome/Site Actions/Help) back to right side after hiding Suite Bar Left */
+#suiteBarRight {
+	position: absolute; 
+	right: 0;  
+	background: transparent;  
+	top: 0;
+	z-index: 2;
+}
 
 
 
-  /* NAVIGATION (TOP NAV BAR) 
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+/* HEADER  
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-	/* Top nav bar placement & formatting */
-		.ms-breadcrumb-top > .ms-core-navigation {
-			background: #000;
-			display: block;
-			height: 41px;
-			position: absolute;
-			top:0;
-			width: 100%;
-			border-bottom: #666 1px solid;
-			text-align: center;
-		}
-		.ms-core-listMenu-horizontalBox {
-			margin-left: 40px;
-		}
+/* Undo the crazy that SharePoint creates with table display set to DIVs*/
+#s4-titlerow .ms-table,
+#s4-titlerow .ms-tableRow,
+#s4-titlerow .ms-tableCell {
+	display: block;
+}
 
-	/* Add BBC logo before navigation */
-		.ms-core-listMenu-horizontalBox:before {
-			content: "";
-			position: absolute;
-			margin-left: -260px;
-			top: 0;
-			background: url("http://2013.spe.io/sites/sptechcon/style library/bbc-blocks-light.png") no-repeat 0 8px;
-			display: block;
-			width: 94px;
-			height: 41px;
-			border-right: #666 1px solid;
-		}
+/* Wrapper around site logo wrapper */
+#titleAreaBox {
+	margin: 0; 
+}
 
-	/* Nav item text formatting */
-		.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item {
-			height: 16px;
-			color: white;
-			font-family: Arial, Helvetica, freesans, sans-serif;
-			font-size: 13px;
-			font-weight: bold;
-			margin-right: 0;
-			padding: 12px 15px;
-			border-right: #666 1px solid;
-		}
-		.ms-core-listMenu-horizontalBox > ul > li.static:first-child > .ms-core-listMenu-item {
-			border-left: #666 1px solid;
-		}
+/* Site logo wrapper */		
+#siteIcon {
+	float: none;  
+	text-align: left;  
+	margin-top: 35px;
+	position: absolute;
+	left: 50%;
+	margin-left: -565px;
+} 
 
-	/* Remove default image and formatting for dynamic menu drop downs */
-		.ms-core-listMenu-horizontalBox .dynamic-children.additional-background {
-			padding-right: 0;
-			background: none;
-		}
+/* Add new logo image */
+.ms-siteicon-a {
+	background: #df180e url('http://classcdn.s3.amazonaws.com/images/bbc_one.png') no-repeat right; 
+	width: 173px; 
+	max-width: 173px; 
+	height: 56px; 
+	max-height: 56px; 
+}
 
-	/* Insert new icon for dynamic menu drop downs */
-		.ms-core-listMenu-horizontalBox .dynamic-children.additional-background:after {
-			content: "\f0d7";
-			font-family: FontAwesome;
-			padding-left: 10px;
-			font-size: .7em;
-		}
-
-	/* Correct text alignment of dynamic pop up menu nav items */
-		.ms-core-listMenu-verticalBox .ms-core-listMenu-item, ul.dynamic .ms-core-listMenu-item {
-			text-align: left;
-		}
-
-	/* Adjust placement of dynamic pop up menu */
-		ul.dynamic {
-			margin-top: 7px;
-			margin-left: -5px;
-		}
-
-	/* Hover effect for nav bar */
-		.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item {
-			position: relative;
-		}
-		.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item:hover:after {
-			content: "";
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			display: block;
-			height: 4px;
-			background: #fff;
-		}
-		.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item[href*="news"]:hover:after {
-			background: #871308;
-		}
-		.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item[href*="sport"]:hover:after {
-			background: #FFF000;
-		}
-		.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item[href*="weather"]:hover:after {
-			background: #6AB0D7;
-		}
-		.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item[href*="shop"]:hover:after {
-			background: #1B80E2;
-		}
+/* Page title text */
+#pageTitle {
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	margin-left: -375px;
+	font-family: 'Gill Sans MT', Arial, sans-serif;
+	font-size: 52px;
+	color: #fff;
+	font-weight: normal;
+}
+form[action$="Who.aspx"] #pageTitle,
+form[action$="who.aspx"] #pageTitle {
+	width: 100%;
+	background: url("http://classcdn.s3.amazonaws.com/images/drwho-hdr.png") no-repeat center;
+	height: 170px;
+	text-indent: -99999px;
+	top: 50px;
+	left: 50%;
+	margin-left: -50%;
+}
 
 
 
-  /* SEARCH  
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+/* NAVIGATION (TOP NAV BAR) 
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-	/* Search box placement */
-		.ms-mpSearchBox.ms-floatRight {
-			float: none;
-			position: absolute;
-			top: 8px;
-			left: 50%;
-			margin-left: 228px;  
-		}
+/* Top nav bar placement & formatting */
+.ms-breadcrumb-top > .ms-core-navigation {
+	background: #000;
+	display: block;
+	height: 41px;
+	position: absolute;
+	top:0;
+	width: 100%;
+	border-bottom: #666 1px solid;
+	text-align: center;
+}
+.ms-core-listMenu-horizontalBox {
+	margin-left: 40px;
+}
 
-	/* Search background */
-		.ms-srch-sb {
-			background: #fff;
-		}
+/* Add BBC logo before navigation */
+.ms-core-listMenu-horizontalBox:before {
+	content: "";
+	position: absolute;
+	margin-left: -260px;
+	top: 0;
+	background: url("http://classcdn.s3.amazonaws.com/images/bbc-blocks-light.png") no-repeat 0 8px;
+	display: block;
+	width: 94px;
+	height: 41px;
+	border-right: #666 1px solid;
+}
 
-	/* Remove default border */
-		.ms-srch-sb-border,
-		.ms-srch-sb-border:hover {
-			border-color: transparent;
-		}
+/* Nav item text formatting */
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item {
+	height: 16px;
+	color: white;
+	font-family: Arial, Helvetica, freesans, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	margin-right: 0;
+	padding: 12px 15px;
+	border-right: #666 1px solid;
+}
+.ms-core-listMenu-horizontalBox > ul > li.static:first-child > .ms-core-listMenu-item {
+	border-left: #666 1px solid;
+}
 
-	/* Modify default formatting for input */
-		.ms-srch-sb input {
-			width: 170px;
-			color: black;
-			font-family: Arial, Helvetica, freesans, sans-serif;
-			font-size: 13px;
-			font-weight: bold;
-		}
+/* Remove default image and formatting for dynamic menu drop downs */
+.ms-core-listMenu-horizontalBox .dynamic-children.additional-background {
+	padding-right: 0;
+	background: none;
+}
 
-	/* Hide default Search icon */
-		.ms-srch-sb-searchImg {
-			display: none;
-		}
+/* Insert new icon for dynamic menu drop downs */
+.ms-core-listMenu-horizontalBox .dynamic-children.additional-background:after {
+	content: "\f0d7";
+	font-family: FontAwesome;
+	padding-left: 10px;
+	font-size: .7em;
+}
 
-	/* Insert new search icon */
-		.ms-srch-sb-searchLink:before {
-			content: "\f002";
-			font-family: FontAwesome;
-			font-size: 1rem;
-			display: inline-block;
-			padding: 1px;
-			color: #2F373F;
-		}
+/* Correct text alignment of dynamic pop up menu nav items */
+.ms-core-listMenu-verticalBox .ms-core-listMenu-item, ul.dynamic .ms-core-listMenu-item {
+	text-align: left;
+}
 
+/* Adjust placement of dynamic pop up menu */
+ul.dynamic {
+	margin-top: 7px;
+	margin-left: -5px;
+}
 
-
- /* NAVIGATION (QUICK LAUNCH)
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	/* Quick Launch placement & formatting */
-		#sideNavBox {
-			float: none;
-			width: 976px;
-			height: 44px;
-			margin: 10px auto 0;
-			background: rgba(66, 55, 55, 0.8);
-		}
-		form[action$="Who.aspx"] #sideNavBox,
-		form[action$="who.aspx"] #sideNavBox {
-			background: rgba(34,53,62, 0.8);
-			margin-top: 100px;
-		}
-		.ms-core-sideNavBox-removeLeftMargin {
-			margin-left: 0;
-		}
-
-	/* Convert to horizontal nav bar */
-		.ms-core-listMenu-verticalBox ul li {
-			float: left;
-		}
-
-	/* Nav item text formatting */
-		#s4-workspace .ms-core-listMenu-verticalBox ul li a {
-			font-family: Arial, Helvetica, freesans, sans-serif;
-			font-size: 16px;
-			height: 20px;
-			padding: 12px 15px;
-			color: rgb(214, 211, 175);
-		}
-		form[action$="Who.aspx"] #s4-workspace .ms-core-listMenu-verticalBox ul li a,
-		form[action$="who.aspx"] #s4-workspace .ms-core-listMenu-verticalBox ul li a {
-			color: #BBDEDE;
-		}
-
-	/* Nav item selected and hover effect */
-		#s4-workspace .ms-core-listMenu-verticalBox ul li.selected > a,
-		#s4-workspace .ms-core-listMenu-verticalBox ul li a:hover {
-			background: rgba(31, 26, 26,.3);
-			color: #fff;
-		}
-		form[action$="Who.aspx"] #s4-workspace .ms-core-listMenu-verticalBox ul li.selected > a,
-		form[action$="who.aspx"] #s4-workspace .ms-core-listMenu-verticalBox ul li.selected > a,
-		form[action$="Who.aspx"] #s4-workspace .ms-core-listMenu-verticalBox ul li a:hover,
-		form[action$="who.aspx"] #s4-workspace .ms-core-listMenu-verticalBox ul li a:hover {
-			background: rgba(19, 26, 29,.3);
-			color: #fff;
-		}
-
-	/* Hide "Site Contents" link */
-		#s4-workspace .ms-core-listMenu-verticalBox > a {
-			display: none;
-		}
+/* Hover effect for nav bar */
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item {
+	position: relative;
+}
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item:hover:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	height: 4px;
+	background: #fff;
+}
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item[href*="news"]:hover:after {
+	background: #871308;
+}
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item[href*="sport"]:hover:after {
+	background: #FFF000;
+}
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item[href*="weather"]:hover:after {
+	background: #6AB0D7;
+}
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item[href*="shop"]:hover:after {
+	background: #1B80E2;
+}
 
 
 
- /* RESPONSIVE DESIGN
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+/* SEARCH  
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+/* Search box placement */
+.ms-mpSearchBox.ms-floatRight {
+	float: none;
+	position: absolute;
+	top: 8px;
+	left: 50%;
+	margin-left: 228px;  
+}
+
+/* Search background */
+.ms-srch-sb {
+	background: #fff;
+}
+
+/* Remove default border */
+.ms-srch-sb-border,
+.ms-srch-sb-border:hover {
+	border-color: transparent;
+}
+
+/* Modify default formatting for input */
+.ms-srch-sb input {
+	width: 170px;
+	color: black;
+	font-family: Arial, Helvetica, freesans, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+/* Hide default Search icon */
+.ms-srch-sb-searchImg {
+	display: none;
+}
+
+/* Insert new search icon */
+.ms-srch-sb-searchLink:before {
+	content: "\f002";
+	font-family: FontAwesome;
+	font-size: 1rem;
+	display: inline-block;
+	padding: 1px;
+	color: #2F373F;
+}
+
+
+
+/* NAVIGATION (QUICK LAUNCH)
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+/* Quick Launch placement & formatting */
+#sideNavBox {
+	float: none;
+	width: 976px;
+	height: 44px;
+	margin: 10px auto 0;
+	background: rgba(66, 55, 55, 0.8);
+}
+form[action$="Who.aspx"] #sideNavBox,
+form[action$="who.aspx"] #sideNavBox {
+	background: rgba(34,53,62, 0.8);
+	margin-top: 100px;
+}
+.ms-core-sideNavBox-removeLeftMargin {
+	margin-left: 0;
+}
+
+/* Convert to horizontal nav bar */
+.ms-core-listMenu-verticalBox ul li {
+	float: left;
+}
+
+/* Nav item text formatting */
+#s4-workspace .ms-core-listMenu-verticalBox ul li a {
+	font-family: Arial, Helvetica, freesans, sans-serif;
+	font-size: 16px;
+	height: 20px;
+	padding: 12px 15px;
+	color: rgb(214, 211, 175);
+}
+form[action$="Who.aspx"] #s4-workspace .ms-core-listMenu-verticalBox ul li a,
+form[action$="who.aspx"] #s4-workspace .ms-core-listMenu-verticalBox ul li a {
+	color: #BBDEDE;
+}
+
+/* Nav item selected and hover effect */
+#s4-workspace .ms-core-listMenu-verticalBox ul li.selected > a,
+#s4-workspace .ms-core-listMenu-verticalBox ul li a:hover {
+	background: rgba(31, 26, 26,.3);
+	color: #fff;
+}
+form[action$="Who.aspx"] #s4-workspace .ms-core-listMenu-verticalBox ul li.selected > a,
+form[action$="who.aspx"] #s4-workspace .ms-core-listMenu-verticalBox ul li.selected > a,
+form[action$="Who.aspx"] #s4-workspace .ms-core-listMenu-verticalBox ul li a:hover,
+form[action$="who.aspx"] #s4-workspace .ms-core-listMenu-verticalBox ul li a:hover {
+	background: rgba(19, 26, 29,.3);
+	color: #fff;
+}
+
+/* Hide "Site Contents" link */
+#s4-workspace .ms-core-listMenu-verticalBox > a {
+	display: none;
+}
+
+
+
+/* RESPONSIVE DESIGN
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 @media screen and (max-width: 976px) {
-	/* Web page background */
-		form[action$="Who.aspx"] #s4-workspace,
-		form[action$="who.aspx"] #s4-workspace {
-			background: #101010 url("http://2013.spe.io/sites/sptechcon/style library/drwho-scale-bkgd.jpg") no-repeat center 42px;
-			background-size: cover;
-		}
+/* Web page background */
+form[action$="Who.aspx"] #s4-workspace,
+form[action$="who.aspx"] #s4-workspace {
+	background: #101010 url("http://classcdn.s3.amazonaws.com/images/drwho-scale-bkgd.jpg") no-repeat center 42px;
+	background-size: cover;
+}
 
-	/* Page content area */
-		#contentBox {
-			width: auto;
-		}
+/* Page content area */
+#contentBox {
+	width: auto;
+}
 
-	/* Site logo wrapper */		
-		#siteIcon {
-			left: 0;
-			margin-left: 0;
-		}
+/* Site logo wrapper */		
+#siteIcon {
+	left: 0;
+	margin-left: 0;
+}
 
-	/* Page title text */
-		form[action$="Who.aspx"] #pageTitle,
-		form[action$="who.aspx"] #pageTitle {
-			top: 5%;
-			background-size: 50%;
-			height: 100px;
-		}
+/* Page title text */
+form[action$="Who.aspx"] #pageTitle,
+form[action$="who.aspx"] #pageTitle {
+	top: 5%;
+	background-size: 50%;
+	height: 100px;
+}
 
-	/* Top nav bar placement & formatting */
-		.ms-breadcrumb-top > .ms-core-navigation {
-			left: 0;
-			text-align: left;
-			padding-left: 60px;
-		}
+/* Top nav bar placement & formatting */
+.ms-breadcrumb-top > .ms-core-navigation {
+	left: 0;
+	text-align: left;
+	padding-left: 60px;
+}
 
-	/* Hide nav items past the third */	
-		.ms-core-listMenu-horizontalBox li.static:nth-child(-n+3) {
-			display: none;
-		}
+/* Hide nav items past the third */	
+.ms-core-listMenu-horizontalBox li.static:nth-child(-n+3) {
+	display: none;
+}
 
-	/* Add BBC logo before navigation */
-		.ms-core-listMenu-horizontalBox:before {
-			margin-left: -94px;
-		}
+/* Add BBC logo before navigation */
+.ms-core-listMenu-horizontalBox:before {
+	margin-left: -94px;
+}
 
-	/* Search box placement */
-		.ms-mpSearchBox.ms-floatRight {
-			left: auto;
-			right: 5px;
-			margin-right:0;  
-			width: auto;
-		}
+/* Search box placement */
+.ms-mpSearchBox.ms-floatRight {
+	left: auto;
+	right: 5px;
+	margin-right:0;  
+	width: auto;
+}
 
-	/* Quick Launch placement & formatting */
-	 	form[action$="Who.aspx"] #sideNavBox,
-		form[action$="who.aspx"] #sideNavBox {
-			margin-top: 20px;
-		}
+/* Quick Launch placement & formatting */
+form[action$="Who.aspx"] #sideNavBox,
+form[action$="who.aspx"] #sideNavBox {
+	margin-top: 20px;
+}
 
 }
 
 
- /* 
+/* 
 SharePoint Experts, Inc. 
 sharepointexperience.com
 */	
