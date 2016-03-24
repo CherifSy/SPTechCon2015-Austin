@@ -1,7 +1,15 @@
-/* =SharePoint Experts, Inc. - CSS to rebrand a SharePoint 2013 site that is using seattle.master.  On-premises.
--Copyright SharePoint Experts, Inc. and Heather Solomon. Distributed to class students for reference and educational purposes. Code may be used as long as this copyright message stays intact. 
--sharepointexperience.com
-*/
+/* The MIT License (MIT)
+
+Copyright (c) 2016, Lumen Novus Incorporated d/b/a SharePoint Experience
+http://sharepointexperience.com/
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
+
+/* CSS to rebrand an on-premises SharePoint 2013 site that is using seattle.master.  Can be used for Office365 SharePoint version 2013 if modifications are added to rebrand the Suite Bar area. */
 
 /* NOTES
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -24,7 +32,7 @@ OOTB = Out-of-the-box
 
 
 /* WEB FONTS
-SharePoint Online only:  Web fonts must be saved locally, for example in a folder within the Style Library. See @font-face code sample below.
+SharePoint Online only:  Web fonts must be saved locally, for example in a folder within the Style Library. Reference a @font-face code sample online.
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 /* Font Awesome is a free font. http://fontawesome.io/  */
@@ -387,67 +395,61 @@ form[action$="who.aspx"] #s4-workspace .ms-core-listMenu-verticalBox ul li a:hov
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 @media screen and (max-width: 976px) {
-/* Web page background */
-form[action$="Who.aspx"] #s4-workspace,
-form[action$="who.aspx"] #s4-workspace {
-	background: #101010 url("http://classcdn.s3.amazonaws.com/images/drwho-scale-bkgd.jpg") no-repeat center 42px;
-	background-size: cover;
+	/* Web page background */
+	form[action$="Who.aspx"] #s4-workspace,
+	form[action$="who.aspx"] #s4-workspace {
+		background: #101010 url("http://classcdn.s3.amazonaws.com/images/drwho-scale-bkgd.jpg") no-repeat center 42px;
+		background-size: cover;
+	}
+
+	/* Page content area */
+	#contentBox {
+		width: auto;
+	}
+
+	/* Site logo wrapper */		
+	#siteIcon {
+		left: 0;
+		margin-left: 0;
+	}
+
+	/* Page title text */
+	form[action$="Who.aspx"] #pageTitle,
+	form[action$="who.aspx"] #pageTitle {
+		top: 5%;
+		background-size: 50%;
+		height: 100px;
+	}
+
+	/* Top nav bar placement & formatting */
+	.ms-breadcrumb-top > .ms-core-navigation {
+		left: 0;
+		text-align: left;
+		padding-left: 60px;
+	}
+
+	/* Hide nav items past the third */	
+	.ms-core-listMenu-horizontalBox li.static:nth-child(-n+3) {
+		display: none;
+	}
+
+	/* Add BBC logo before navigation */
+	.ms-core-listMenu-horizontalBox:before {
+		margin-left: -94px;
+	}
+
+	/* Search box placement */
+	.ms-mpSearchBox.ms-floatRight {
+		left: auto;
+		right: 5px;
+		margin-right:0;  
+		width: auto;
+	}
+
+	/* Quick Launch placement & formatting */
+	form[action$="Who.aspx"] #sideNavBox,
+	form[action$="who.aspx"] #sideNavBox {
+		margin-top: 20px;
+	}
+
 }
-
-/* Page content area */
-#contentBox {
-	width: auto;
-}
-
-/* Site logo wrapper */		
-#siteIcon {
-	left: 0;
-	margin-left: 0;
-}
-
-/* Page title text */
-form[action$="Who.aspx"] #pageTitle,
-form[action$="who.aspx"] #pageTitle {
-	top: 5%;
-	background-size: 50%;
-	height: 100px;
-}
-
-/* Top nav bar placement & formatting */
-.ms-breadcrumb-top > .ms-core-navigation {
-	left: 0;
-	text-align: left;
-	padding-left: 60px;
-}
-
-/* Hide nav items past the third */	
-.ms-core-listMenu-horizontalBox li.static:nth-child(-n+3) {
-	display: none;
-}
-
-/* Add BBC logo before navigation */
-.ms-core-listMenu-horizontalBox:before {
-	margin-left: -94px;
-}
-
-/* Search box placement */
-.ms-mpSearchBox.ms-floatRight {
-	left: auto;
-	right: 5px;
-	margin-right:0;  
-	width: auto;
-}
-
-/* Quick Launch placement & formatting */
-form[action$="Who.aspx"] #sideNavBox,
-form[action$="who.aspx"] #sideNavBox {
-	margin-top: 20px;
-}
-
-}
-
-
-/* 
-SharePoint Experts, Inc. 
-sharepointexperience.com
-*/	
